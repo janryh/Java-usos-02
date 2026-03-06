@@ -40,3 +40,4 @@ _Dodakowo program jest wgl nieoptymalnie napisany xdd w przypadku normalnego uso
 - moze dodanie dziennika by zapisywac occeny
 - znalesc bardziej optymalne rozwiazanie dla wpisywanie ocen np zapisanie czuniow w klasie nauczyciela
 - dodanie cos ala baza danych w FileHandler
+- dodac interowanie nowo dodanych osob, a nie indeksy wpisywac
