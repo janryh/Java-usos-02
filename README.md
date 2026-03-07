@@ -25,7 +25,7 @@ graph LR
     pkt["Wszystko w USOS.java"] --> pkt1["Kilka klas jeden folder"] --> pkt3["Podzielenie na foldery"]
 ```
 
-> `main` znajduje sie w `USOS.java`
+nalezy wlaczyc plik z `Java-usos/` inaczej dane sie nie zapisza, `main` znajduje sie w `USOS.java`
 
 _sry za balagan w klasach_
 

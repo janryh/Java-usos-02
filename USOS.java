@@ -46,7 +46,10 @@ public class USOS {
         Student stu = new Student("Kamil", "Plockowski", "mam@on.com", 0);
         adm.AddTeacher(teach);
         adm.AddStudent(stu);
+        FileHandler fileHandler = new FileHandler("logic/test-data.txt");
+
         addTestData(adm);
+        fileHandler.Zapisz(adm);
         adm.AssignTeacher(0, 0);
         UI.startUi(adm, stu, teach);
     }
