@@ -46,7 +46,7 @@ public class Admin extends Czlowiek {
         return this.kursy;
     }
 
-    private Nauczyciel GetTeacher(int k) {
+    public Nauczyciel GetTeacher(int k) {
         for (Nauczyciel nauczyciel : this.nauczyciele) {
             if (nauczyciel.id == k)
                 return nauczyciel;
@@ -54,7 +54,7 @@ public class Admin extends Czlowiek {
         return null;
     }
 
-    private Student GetStudent(int k) {
+    public Student GetStudent(int k) {
         for (Student student : this.studenci) {
             if (student.id == k)
                 return student;

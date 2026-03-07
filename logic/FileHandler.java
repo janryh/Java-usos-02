@@ -81,7 +81,7 @@ public class FileHandler {
                     case "S":
                         admin.AddStudent(new Student(dane[1], dane[2], dane[3], Integer.parseInt(dane[4])));
                         break;
-                    case "T":
+                    case "N":
                         admin.AddTeacher(new Nauczyciel(dane[1], dane[2], dane[3], dane[4], Integer.parseInt(dane[5])));
                         break;
                     case "K":
