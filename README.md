@@ -28,7 +28,7 @@ graph LR
 Nalezy wlaczyc plik z `Java-usos/` inaczej dane sie nie zapisza, `main` znajduje sie w `USOS.java`
 
 ```Java
-///Aby uzyc test-data zmien
+///Aby uzyc test-data zmien     dane.txt->test-data.txt
 FileHandler fileHandler = new FileHandler("logic/dane.txt");
 fileHandler.Wczytaj(adm);
 ```
