@@ -25,7 +25,13 @@ graph LR
     pkt["Wszystko w USOS.java"] --> pkt1["Kilka klas jeden folder"] --> pkt3["Podzielenie na foldery"]
 ```
 
-> `main` znajduje sie w `USOS.java`
+Nalezy wlaczyc plik z `Java-usos/` inaczej dane sie nie zapisza, `main` znajduje sie w `USOS.java`
+
+```Java
+///Aby uzyc test-data zmien     dane.txt->test-data.txt
+FileHandler fileHandler = new FileHandler("logic/dane.txt");
+fileHandler.Wczytaj(adm);
+```
 
 _sry za balagan w klasach_
 
@@ -39,5 +45,5 @@ _Dodakowo program jest wgl nieoptymalnie napisany xdd w przypadku normalnego uso
 - metody usuwania ocen/uczniow/studentow/kursow
 - moze dodanie dziennika by zapisywac occeny
 - znalesc bardziej optymalne rozwiazanie dla wpisywanie ocen np zapisanie czuniow w klasie nauczyciela
-- dodanie cos ala baza danych w FileHandler
+- ~~dodanie cos ala baza danych w FileHandler~~
 - dodac interowanie nowo dodanych osob, a nie indeksy wpisywac
