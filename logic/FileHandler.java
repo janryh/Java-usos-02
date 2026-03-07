@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import models.*;
 
@@ -23,10 +24,10 @@ public class FileHandler {
             if (file.createNewFile()) {
                 System.out.println("Stworzono plik " + this.path);
             } else {
-                System.out.println("Plik w juz istnieje " + this.path);
+                System.out.println("Plik juz istnieje " + this.path);
             }
         } catch (IOException e) {
-            System.out.println("Nie udalo sie zainicjlowac danych " + e);
+            System.out.println("Nie udalo sie zainicjlowac danych " + e.getMessage());
         }
     }
 
@@ -61,7 +62,54 @@ public class FileHandler {
         }
     }
 
-    public void Wczytaj(Admin admin) {
+    /*
+     * Jest niepotymalnie narazie bo jak chce
+     * dodac jednego ucznia do kilku kursow
+     * tworze kilka razy obiekt
+     */
 
+    public void Wczytaj(Admin admin) {
+        File file = new File(this.path);
+        if (!file.exists())
+            return;
+        Kurs currKurs = null;
+        try (Scanner scan = new Scanner(file)) {
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
+                String[] dane = line.split(";");
+                switch (dane[0]) {
+                    case "S":
+                        admin.AddStudent(new Student(dane[1], dane[2], dane[3], Integer.parseInt(dane[4])));
+                        break;
+                    case "T":
+                        admin.AddTeacher(new Nauczyciel(dane[1], dane[2], dane[3], dane[4], Integer.parseInt(dane[5])));
+                        break;
+                    case "K":
+                        currKurs = new Kurs(dane[1], Integer.parseInt(dane[2]));
+                        admin.AddKurs(currKurs);
+                        break;
+                    case "P":
+                        if (currKurs != null) {
+                            currKurs.AddProwadzacy(
+                                    new Nauczyciel(dane[1], dane[2], dane[3], dane[4], Integer.parseInt(dane[5])));
+                        }
+                        break;
+                    case "U":
+                        if (currKurs != null) {
+                            currKurs.AddUser(new Student(dane[1], dane[2], dane[3], Integer.parseInt(dane[4])));
+                        }
+                        break;
+                    case "D":
+                        if (currKurs != null) {
+                            currKurs.AddPDF(dane[1]);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Blad wczytywania " + e.getMessage());
+        }
     }
 }
