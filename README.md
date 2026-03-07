@@ -39,5 +39,5 @@ _Dodakowo program jest wgl nieoptymalnie napisany xdd w przypadku normalnego uso
 - metody usuwania ocen/uczniow/studentow/kursow
 - moze dodanie dziennika by zapisywac occeny
 - znalesc bardziej optymalne rozwiazanie dla wpisywanie ocen np zapisanie czuniow w klasie nauczyciela
-- dodanie cos ala baza danych w FileHandler
+- ~~dodanie cos ala baza danych w FileHandler~~
 - dodac interowanie nowo dodanych osob, a nie indeksy wpisywac
