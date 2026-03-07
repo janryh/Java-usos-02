@@ -34,6 +34,18 @@ public class Admin extends Czlowiek {
         return null;
     }
 
+    protected List<Nauczyciel> getNauczyciele() {
+        return this.nauczyciele;
+    }
+
+    protected List<Student> getStudents() {
+        return this.studenci;
+    }
+
+    protected List<Kurs> getCourses() {
+        return this.kursy;
+    }
+
     private Nauczyciel GetTeacher(int k) {
         for (Nauczyciel nauczyciel : this.nauczyciele) {
             if (nauczyciel.id == k)

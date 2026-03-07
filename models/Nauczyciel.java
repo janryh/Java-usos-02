@@ -59,6 +59,11 @@ public class Nauczyciel extends Czlowiek {
     }
 
     @Override
+    public String GetInfo() {
+        return super.GetInfo() + " " + this.id;
+    }
+
+    @Override
     public void Display() {
         System.out.println(this.id + "\t" + this.tytul_naukowy + " " + super.GetInfo());
     }

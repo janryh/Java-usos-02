@@ -49,6 +49,18 @@ public class Kurs {
         }
     }
 
+    public List<String> GetMaterials() {
+        return this.prezentacje;
+    }
+
+    public List<Nauczyciel> GetProwadzacych() {
+        return this.prowadzacy;
+    }
+
+    public List<Student> GetStudents() {
+        return this.users;
+    }
+
     public Student GetStudent(int id) {
         for (Student student : users) {
             if (student.id == id)
