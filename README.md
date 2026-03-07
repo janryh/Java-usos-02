@@ -25,7 +25,13 @@ graph LR
     pkt["Wszystko w USOS.java"] --> pkt1["Kilka klas jeden folder"] --> pkt3["Podzielenie na foldery"]
 ```
 
-nalezy wlaczyc plik z `Java-usos/` inaczej dane sie nie zapisza, `main` znajduje sie w `USOS.java`
+Nalezy wlaczyc plik z `Java-usos/` inaczej dane sie nie zapisza, `main` znajduje sie w `USOS.java`
+
+```Java
+///Aby uzyc test-data zmien
+FileHandler fileHandler = new FileHandler("logic/dane.txt");
+fileHandler.Wczytaj(adm);
+```
 
 _sry za balagan w klasach_
 
